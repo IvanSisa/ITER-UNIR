@@ -1,0 +1,125 @@
+$lightPurple: #F4F2FD;
+$purple: #918BFF;
+$lightGreen: #F0FAF6;
+$green: #7CD1B0;
+$lightYellow: #FEFBE3;
+$yellow: #F1B270;
+$articleText: #6E7894;
+$white: #FFFFFF;
+$black: #000014;
+$borderGrey: #C2C2C2;
+
+@mixin article-border{
+    border: solid 1px $borderGrey;
+}
+@mixin flex{
+    display: flex;
+    justify-content: space-between;
+}
+@mixin alignItems-center{
+    align-items: center;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roobert-regular';    
+}
+.header{
+    text-align: center;
+    font-weight: 300;
+    font-size: 30px;
+    margin: 70px;
+}
+section{
+    @include flex;
+    flex-wrap: wrap;
+}
+
+.article{
+    @include article-border;
+    max-width: 400px;
+    margin: 30px;
+    &__body{
+        padding: 20px 20px;
+        color: $articleText;
+        &__title{
+        @include flex;
+        color: $black;
+        font-size: 20px
+        }
+        &__text{
+            padding: 20px 0;
+            font-size: 15px;
+        } 
+    }
+    
+    &__footer{
+        width: 100%;
+        
+        &__items{
+            @include flex;
+            @include alignItems-center;
+            margin: auto;
+            width: 90%;
+            padding: 10px 0;
+            &__text{
+                @include flex;
+                @include alignItems-center;
+                color: $articleText;
+                p,h4{
+                    margin-right: 20px;
+                }
+                &__title{
+                    border-radius: 20px;
+                    padding: 5px 10px;
+                    color: $white;
+                    font-size: 12px;
+                }
+                &__time,&__data{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+.purple{
+    .article__footer{
+        background-color: $lightPurple;
+    }
+    .article__footer__items__text__title{
+        background-color: $purple;
+    }
+}
+.yellow{
+    .article__footer{
+        background-color: $lightYellow;
+    }
+    .article__footer__items__text__title{
+        background-color: $yellow;
+    }
+}
+.green{
+    .article__footer{
+        background-color: $lightGreen;
+    }
+    .article__footer__items__text__title{
+        background-color: $green;
+    }
+}
+#second-section{
+    display: none;
+}
+#second-button{
+    display: none;
+}
+button{
+    border: solid 2px $black;
+    border-radius: 30px;
+    padding: 15px 30px;
+    background-color: $white;
+    font-size: 18px;
+    font-weight: bold;
+    @include flex;
+    margin: auto;
+}
