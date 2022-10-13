@@ -7,7 +7,6 @@ const App = () => {
     secondSection.classList.replace("none","flex");
     buttonOpen.classList.replace("block","none");
     buttonClose.classList.replace("none","block")
-    console.log("pulsado");
   }
   function closeSection() {
     let secondSection = document.getElementById("second-section");
@@ -15,8 +14,7 @@ const App = () => {
     let buttonClose = document.getElementById("second-button");
     secondSection.classList.replace("flex","none");
     buttonOpen.classList.replace("none","block");
-    buttonClose.classList.replace("block","none");
-    
+    buttonClose.classList.replace("block","none");  
   }
 
   return (
