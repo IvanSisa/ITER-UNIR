@@ -32,17 +32,19 @@ $borderGrey: #C2C2C2;
     margin: 70px;
 }
 section{
-    @include flex;
+    display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .article{
     @include article-border;
-    max-width: 400px;
+    max-width: 360px;
     margin: 30px;
     &__body{
-        padding: 20px 20px;
+        padding: 20px 20px ;
         color: $articleText;
+        height: 170px;
         &__title{
         @include flex;
         color: $black;
@@ -56,7 +58,8 @@ section{
     
     &__footer{
         width: 100%;
-        
+        padding-bottom: 0;
+        margin-bottom: 0;
         &__items{
             @include flex;
             @include alignItems-center;
@@ -107,11 +110,14 @@ section{
         background-color: $green;
     }
 }
-#second-section{
+.none{
     display: none;
 }
-#second-button{
-    display: none;
+.block{
+    display:block;
+}
+.flex{
+    display: flex;
 }
 button{
     border: solid 2px $black;
